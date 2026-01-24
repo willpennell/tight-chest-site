@@ -92,3 +92,19 @@ a.logo {
         gap: 15px;
     }
 }
+
+@media (max-width: 440px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 10px;
+    }
+
+    .nav-links {
+        gap: 5px;
+        font-size: 10px;
+    }
+}
