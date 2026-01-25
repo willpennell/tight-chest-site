@@ -21,3 +21,12 @@
     stroke-linecap: round;
     transition: d 2s ease-in-out;
 }
+
+.art-credit {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 0.5px;
+}

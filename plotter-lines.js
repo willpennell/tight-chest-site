@@ -20,10 +20,11 @@
         constructor(startX, startY, angle, speed, depth = 0) {
             this.path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
             this.path.setAttribute('stroke', '#000000');
-            this.path.setAttribute('stroke-width', '0.2');
+            this.path.setAttribute('stroke-width', '1');
             this.path.setAttribute('fill', 'none');
             this.path.setAttribute('opacity', '1');
             this.path.setAttribute('stroke-linecap', 'round');
+            this.path.setAttribute('vector-effect', 'non-scaling-stroke');
             svg.appendChild(this.path);
 
             this.angle = angle;
@@ -64,7 +65,8 @@
                 this.points.push({x: newX, y: newY});
 
                 // Branch off at random points along the line
-                if (this.length > 2 && Math.random() < 0.08 && this.depth < 3) {
+                const branchThreshold = this.depth === 0 ? 0.5 : 2;
+                if (this.length > branchThreshold && Math.random() < 0.08 && this.depth < 3) {
                     this.branch(newX, newY);
                 }
             }
